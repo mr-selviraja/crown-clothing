@@ -1,35 +1,26 @@
-import Directory from './components/Directory/Directory.component';
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+
+import Home from './routes/Home/Home.component';
+import Navigation from './components/Navigation/Navigation.component';
+import Page404 from './routes/Page404/Page404.component';
+import Shop from './routes/Shop/Shop.component';
+import SignIn from './routes/SignIn/SignIn.component';
 
 const App = () => {
-  const categories = [
+  const router = createBrowserRouter([
     {
-      id: 1,
-      title: 'hats',
-      imageUrl: 'https://i.ibb.co/cvpntL1/hats.png',
+      path: '/',
+      element: <Navigation />,
+      errorElement: <Page404 />,
+      children: [
+        { index: true, element: <Home /> },
+        { path: 'shop', element: <Shop /> },
+        { path: 'sign-in', element: <SignIn /> },
+      ],
     },
-    {
-      id: 2,
-      title: 'jackets',
-      imageUrl: 'https://i.ibb.co/px2tCc3/jackets.png',
-    },
-    {
-      id: 3,
-      title: 'sneakers',
-      imageUrl: 'https://i.ibb.co/0jqHpnp/sneakers.png',
-    },
-    {
-      id: 4,
-      title: 'womens',
-      imageUrl: 'https://i.ibb.co/GCCdy8t/womens.png',
-    },
-    {
-      id: 5,
-      title: 'mens',
-      imageUrl: 'https://i.ibb.co/R70vBrQ/men.png',
-    },
-  ];
+  ]);
 
-  return <Directory categories={categories} />;
+  return <RouterProvider router={router} />;
 };
 
 export default App;
