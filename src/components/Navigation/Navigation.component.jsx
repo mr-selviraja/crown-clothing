@@ -9,7 +9,7 @@ const Navigation = () => {
     <>
       <nav className='navigation'>
         <Link className='logo-container' to='/'>
-          <CrwnLogo className='logo' />
+          <CrwnLogo style={{ width: '35px' }} className='logo' />
         </Link>
 
         <ul className='nav-links-container'>
