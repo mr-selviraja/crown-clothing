@@ -3,8 +3,8 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import Home from './routes/Home/Home.component';
 import Navigation from './components/Navigation/Navigation.component';
 import Page404 from './routes/Page404/Page404.component';
-import Shop from './routes/Shop/Shop.component';
 import Authentication from './routes/Authentication/Authentication.component';
+import Shop from './routes/Shop/Shop.component';
 
 const App = () => {
   const router = createBrowserRouter([
